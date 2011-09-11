@@ -1,0 +1,15 @@
+\def\mnedefaulttitle{\variable[kein Titel]{reptitle}}
+{\if\checkvariable{subreptitle}1\medskip\Large\bf\subreptitle :\newline\fi}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|l|l|l|l|l|}%
+\hline
+\rowcolor{tabheadbg}
+\textcolor{tabheadfg}{\variable[Hauptlieferant]{Hrepsort}} &
+\textcolor{tabheadfg}{\variable[Lieferant]{Hvendor}} &
+\textcolor{tabheadfg}{\variable[Preis/Einheit]{Hunitprice}} &
+\textcolor{tabheadfg}{\variable[Währung]{Hcurrency}} &
+\textcolor{tabheadfg}{\variable[MWST.]{Hvat}} &
+\textcolor{tabheadfg}{\variable[Bestellnummer]{Hvendorproductnumber}} \\
+\hline
+\multicolumn{6}{|l|}{\cellcolor{tabheadbg}\textcolor{tabheadfg}{\variable[Bemerkung]{Hnote}}} \\
+\hline

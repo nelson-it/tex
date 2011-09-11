@@ -1,0 +1,32 @@
+\Postvermerk         {}
+
+\IhrZeichen          {\variable[]{Btosign}}
+\IhrSchreiben        {}
+\MeinZeichen         {\variable[]{Bfromsign}}
+
+\Anlagen             {}
+\Verteiler           {}
+
+\Adresse{
+\Binvoicecompany\\%
+\Binvoicecontact \\%
+\\
+\if1\checkvariable{Bpostbox}\postboxstring\ \Bpostbox\else\variable[]{Bstreet}\fi\\
+\if1\checkvariable{Bcountrycarcode}\Bcountrycarcode \ \fi\variable[]{Bpostcode} \variable[]{Bcity}\\
+\if\checkvariable{Bcountry}1\Bcountry\fi\\
+}
+\if\checkvariable{Bthirdreminderdate}1\Datum{\Bthirdreminderdate}\fi
+\ifx\mnelangid\mneen%
+\Betreff{third reminder\newline\Blettersubject}%
+\else
+\Betreff{3. Mahnung\newline\Blettersubject}%
+\fi
+\Anrede{}%
+\begin{g-brief}
+\ifx\mnelangid\mneen%
+The invoice are not payed. Please payed it until the next 14 days.
+\else
+Zu der oben genanten Rechnung ist bei uns noch kein Zahlungseingang
+erfolgt. Wir bitten sie den Betrag inner 14 Tage zu begleichen
+\fi
+\par

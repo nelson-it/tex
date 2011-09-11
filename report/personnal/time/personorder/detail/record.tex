@@ -1,0 +1,26 @@
+\def\mneeins{%
+\\
+\hline
+\Bordernumber&
+\hspace{0cm}\Borderdescription&
+\Bproductnumber&
+\hspace{0cm}\Bproductname&
+\Bdate&
+\mkday{\Bdayname}&
+\Bduration&
+\Bstart&
+\Bend&
+\Bcomment
+}%
+\def\mnezwei{\\%
+\hline\rowcolor{sumcolor2}
+\multicolumn{4}{|l|}{\cellcolor{sumcolor2}\bf Tagessumme} &
+\bf\Bdate&
+\bf\mkday{\Bdayname}&
+\multicolumn{4}{|l|}{\cellcolor{sumcolor2}\bf\Bduration}
+}%
+\def\mnedrei{\\\hline\multicolumn{10}{l}{ }\\
+\hline\multicolumn{6}{|l|}{\cellcolor{sumcolor3}\bf Gesamt} &
+\multicolumn{4}{|l|}{\cellcolor{sumcolor3}\bf\Bduration}
+}%
+\if1\Bsortcol\mneeins\else\if2\Bsortcol\mnezwei\else\mnedrei\fi\fi

@@ -1,0 +1,11 @@
+\variable[]{Blettertext}%
+{\bf\variable[]{subreptitle}\if\checkvariable{Bwatermark}1\watermarkred{\Bwatermark}\fi}\par
+\medskip
+\expandafter\if\variable[0]{Blumpsum}0
+\begin{longtable}{p{9cm}p{2cm}p{2cm}p{3cm}}
+\bf\variable[Produktname]{Hproductname}&
+\bf\variable[Einheit]{Hproductunit}&
+\hfill\bf\variable[Anzahl]{Hrescount} &
+\hfill\bf\variable[Netto]{Hnetprice} \\
+\hline\\
+\fi

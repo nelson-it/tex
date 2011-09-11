@@ -1,0 +1,32 @@
+\gdef\mneeins{%
+\\
+\hline%
+\Bfullname&%
+\Bproductnumber&%
+\hspace{0cm}\Bproductname&%
+\hspace{0cm}\Bproductstep&%
+\Bdate&%
+\mkday{\Bdayname}&%
+\Bduration&%
+\Bstarttime&%
+\Bendtime&%
+\Bcostperson&%
+\Bcomment%
+}%
+\gdef\mnezwei{\\%
+\hline%
+\cellcolor{sumcolor2}\bf\Bfullname&%
+\multicolumn{5}{|l|}{\cellcolor{sumcolor2}\bf Summe} &%
+\cellcolor{sumcolor2}\bf\Bduration &%
+\multicolumn{2}{|l|}{\cellcolor{sumcolor2}\bf\Hcostpersonsingle : \Bcostpersonsingle} &%
+\cellcolor{sumcolor2}\bf\Bcostperson &
+\cellcolor{sumcolor2}\ %
+}
+\gdef\mnedrei{\\%
+\hline%
+\cellcolor{sumcolor3}\bf Gesammt&%
+\multicolumn{5}{|l|}{\cellcolor{sumcolor3}\bf Summe} &%
+\multicolumn{3}{|l|}{\cellcolor{sumcolor3}\bf\Bduration} &%
+\multicolumn{2}{|l|}{\cellcolor{sumcolor3}\bf\Bcostperson}%
+}%
+\if1\Bsortcol\mneeins\else\if2\Bsortcol\mnezwei\else\mnedrei\fi\fi

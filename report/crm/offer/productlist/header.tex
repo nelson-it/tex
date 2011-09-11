@@ -1,0 +1,18 @@
+\if\expandafter\csname offerproducttypecount\endcsname\csname ganzsicherleer\endcsname%
+\gdef\offerproducttypecount{1}\else\gdef\offerproducttypecount{2}\fi%
+\pagebreak
+{\Large\bf\variable[Produktliste]{subreptitle}}\par
+\medskip
+{%
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength\LTpre{0pt}
+\setlength\LTpost{0pt}
+\begin{longtable}{p{11cm}p{1.5cm}p{1cm}p{3cm}}
+\hline
+\bf\variable[Produktname]{Hcproductname}&
+\bf\variable[Einheit]{Hcunit}&
+\bf\variable[Anzahl]{Hccount}&
+\if1\Bwithvat\hfill\bf\variable[Nettopreis]{Hsumnet}\else\hfill\bf #mne_lang#Preis#\fi \\
+\hline
+\medskip

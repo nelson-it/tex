@@ -1,0 +1,15 @@
+\if\checkvariable{Bproductpriceid}1%
+{\if\checkvariable{subreptitle}1\medskip\Large\bf\subreptitle :\smallskip\newline\fi}
+\begin{tabular*}{\textwidth}{|V{0.15\textwidth}|l@{\extracolsep\fill}l|}%
+\hline%
+\if\checkvariable{subreptitle}0\cellcolor{tabheadbg}\textcolor{tabheadfg}{\variable[Name]{Hname}:}&\bf\variable[]{Bname} & \\%
+\hline\fi
+\textcolor{tabheadfg}{\variable[Preis/Einheit]{Hunitprice}:}& \variable[]{Bunitprice} \variable[]{Bcurrency} &\\
+\textcolor{tabheadfg}{\variable[Einheit]{Hunit}:}& \variable[]{Bunit} & \\
+\hline
+\textcolor{tabheadfg}{\variable[MWST.]{Hvat}:}& \variable[]{Bvat} \if\checkvariable{Bvat}\%\fi &\\
+\textcolor{tabheadfg}{\variable[MWST.]{Hresultvat}:}& \variable[]{Bresultvat} \% &\\
+
+\hline
+\end{tabular*}\par\medskip\medskip
+\fi%

@@ -1,0 +1,33 @@
+\if\checkvariable{Bwatermark}1\watermarkred{\Bwatermark}\fi%
+{
+\begin{tabular}{rl}
+\bf Name: & \fullname \\
+\bf Zeit: & \startdate\ {\bf bis} \enddate \\
+\end{tabular}
+\medskip
+}
+{
+\footnotesize
+\def\rc{sumcolor1}
+\def\mkday#1{\if1#1So%
+      \else\if2#1Mo%
+      \else\if3#1Di%
+      \else\if4#1Mi%
+      \else\if5#1Do%
+      \else\if6#1Fr%
+      \else\if7#1Sa%
+      \fi\fi\fi\fi\fi\fi\fi%
+}
+\begin{longtable}{|l|p{4.5cm}|l|p{4.5cm}|l|l|l|l|l|p{4.5cm}|}
+\hline
+\rowcolor{tabheadbg}
+\color{tabheadfg}\bf\variable[Projektnummer]{Hordernumber}&
+\color{tabheadfg}\bf\variable[Projektname]{Horderdescription}&
+\color{tabheadfg}\bf\variable[Produktnummer]{Hproductnumber}&
+\color{tabheadfg}\bf\variable[Produktname]{Hproductname}&
+\color{tabheadfg}\bf\variable[Tag]{Hdate}&
+\color{tabheadfg}\bf\variable[Datum]{Hdayname}&
+\color{tabheadfg}\bf\variable[Dauer]{Hduration}&
+\color{tabheadfg}\bf\variable[Start]{Hstart}&
+\color{tabheadfg}\bf\variable[Ende]{Hend}&
+\color{tabheadfg}\bf\variable[Komentar]{Hcomment}

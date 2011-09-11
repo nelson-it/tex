@@ -1,0 +1,40 @@
+\Postvermerk         {}
+
+\IhrZeichen          {\variable[]{Btosign}}
+\IhrSchreiben        {}
+\MeinZeichen         {\variable[]{Bfromsign}}
+
+\Anlagen             {}
+\Verteiler           {}
+
+\if\checkvariable{Bdate}1\def\datum{\Bdate}\fi
+
+\Adresse{
+\if1\checkvariable{Bcompany}\Bcompany\else\if1\checkvariable{Brefname}\Brefname\else\variable[kein Name]{Bname}\fi\fi\\%
+\if1\checkvariable{Bcompany}%
+  \if\checkvariable{Bcontactname}1%
+    \Bcontactname\\
+  \else%
+    \if\checkvariable{Bname}1
+      \ifx\Bname\leerzeichen\else\Bname\\\fi
+    \fi%
+  \fi%
+\else%
+    \if1\checkvariable{Brefname}%
+      \if\checkvariable{Bname}1%
+        \ifx\Bname\leerzeichen\else\Bname\\\fi%
+      \fi%
+    \fi%
+\fi%
+ \\
+\if1\checkvariable{Bpostbox}\postboxstring\ \Bpostbox\else\variable[]{Bstreet}\fi\\
+\if1\checkvariable{Bcountrycarcode}\Bcountrycarcode \ \fi\variable[]{Bpostcode} \variable[]{Bcity}\\
+\if\checkvariable{Bcountry}1\Bcountry\fi\\
+}
+\if\checkvariable{Blettersubject}0\Betreff{\csname lettersubject\endcsname}%
+\else\Betreff{\Blettersubject}\fi%
+%\Betreff{\Blettersubject}
+\if\checkvariable{nosalutation}0\Anrede{\variable[\defaultsalutation]{Blettersalutation},}\fi%
+\begin{g-brief}
+\if\checkvariable{lettercontent}0\variable[]{Blettercontent}\else\csname lettercontent\endcsname\fi
+\par
