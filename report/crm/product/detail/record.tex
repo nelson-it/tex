@@ -1,0 +1,10 @@
+{\if\checkvariable{subreptitle}1\medskip\Large\bf\subreptitle :\medskip\newline\fi}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular*}{\textwidth}{|V{0.15\textwidth}|@{\extracolsep\fill}p{0.8\textwidth}|}%
+\hline%
+\textcolor{tabheadfg}{\variable[Name]{Hname}:}&\bf\variable[]{Bname} \\%
+\hline
+\textcolor{tabheadfg}{\variable[Beschreibung]{Hdescription}:}& \variable[\Bdescription]{productdescription}\\
+\hline
+\end{tabular*}\par\medskip\medskip
+\renewcommand{\arraystretch}{1.0}

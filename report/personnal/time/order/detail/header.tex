@@ -1,0 +1,35 @@
+\if\checkvariable{Bwatermark}1\watermarkred{\Bwatermark}\fi%
+\def\mkday#1{\if1#1So%
+      \else\if2#1Mo%
+      \else\if3#1Di%
+      \else\if4#1Mi%
+      \else\if5#1Do%
+      \else\if6#1Fr%
+      \else\if7#1Sa%
+      \fi\fi\fi\fi\fi\fi\fi%
+}%
+{
+\normalsize
+\begin{tabular}{rl}
+\bf \Hordernumber : & \ordernumber \\
+\bf \Horderdescription : & \orderdescription \\
+\bf Zeit: & \startdate\ {\bf bis} \enddate \\
+\end{tabular}
+\medskip
+}%
+{
+\footnotesize
+\begin{longtable}{|l|l|p{4cm}|p{4cm}|l|l|l|l|l|r|p{3cm}|}
+\hline
+\rowcolor{tabheadbg}
+\bf\color{tabheadfg}\Hfullname&
+\bf\color{tabheadfg}\Hproductnumber&
+\bf\color{tabheadfg}\Hproductname&
+\bf\color{tabheadfg}\Hproductstep&
+\bf\color{tabheadfg}\Hdate&
+\bf\color{tabheadfg}\Hdayname&
+\bf\color{tabheadfg}\Hduration&
+\bf\color{tabheadfg}\Hstarttime&
+\bf\color{tabheadfg}\Hendtime&
+\bf\color{tabheadfg}Kosten&
+\bf\color{tabheadfg}\Hcomment

@@ -1,0 +1,9 @@
+\ifx\mnelangid\mneen%
+\def\defaultsalutation{Dear Sir or Madam}%
+\def\postboxstring{postbox}%
+\else
+\def\defaultsalutation{Sehr geehrte Damen und Herren}%
+\def\postboxstring{Postfach}%
+\fi
+\if1\checkvariable{nosalutation}\def\gruss{}\fi
+

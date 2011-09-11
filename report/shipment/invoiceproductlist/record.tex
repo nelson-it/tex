@@ -1,0 +1,63 @@
+\expandafter\if\variable[0]{Blumpsum}0%
+\def\mnet{\bf\Bproductname&%
+\bf\Bproductunit&%
+\hfill\bf\variable[Anzahl]{Brescount}&%
+\hfill\bf\variable[Bruttopreis]{Bnetprice} \variable[]{Bcurrency}}%
+\def\mnef{}%
+\if1\Bsortcol\mnet\else\mnef\fi\\%
+%
+\def\mnet{}%
+\if1\Bwithvat%
+  \def\mnef{\\ \hline\\\multicolumn{3}{r}{\bf\variable[Netto]{Hnetprice}}
+               & \hfill\bf\variable[]{Bnetprice} \variable[]{Bcurrency} \\%
+               \multicolumn{3}{r}{\bf\variable[MWST]{Hresabsvat}}
+               & \hfill\bf\variable[]{Bresabsvat} \variable[]{Bcurrency} \\%
+               \multicolumn{3}{r}{\bf\variable[Brutto]{Hgrossprice}} 
+               & \hfill\bf\variable[]{Bgrossprice}  \variable[]{Bcurrency} \\%
+  }%
+\else
+  \def\mnef{\\ \hline\\\multicolumn{3}{r}{#mne_lang#Total#} 
+               & \hfill\bf\variable[]{Bgrossprice}  \variable[]{Bcurrency} \\%
+  }%
+\fi%
+\if1\Bsortcol\mnet\else\mnef\fi%
+\else
+\if1\Binvoicecount%
+  \if1\Bwithvat%
+   \def\mnef{\hfill\begin{tabular}{lr}
+               \multicolumn{2}{r}{\bf\variable[-1]{Brescount} Prozent vom Auftragswert} \\
+               \bf\variable[Netto]{Hnetprice} & \bf\variable[]{Bnetprice} \variable[]{Bcurrency} \\%
+               \bf\variable[MWST]{Hresabsvat} & \bf\variable[]{Bresabsvat} \variable[]{Bcurrency} \\%
+               \bf\variable[Brutto]{Hgrossprice} & \bf\variable[]{Bgrossprice}  \variable[]{Bcurrency} \\%
+    \end{tabular}\newline
+  }%
+  \else
+    \def\mnef{\hfill\begin{tabular}{lr}
+              \multicolumn{2}{r}{\bf\variable[-1]{Brescount} Prozent vom Auftragswert} \\
+              #mne_lang#Total# & \bf\variable[]{Bgrossprice}  \variable[]{Bcurrency} \\%
+              \end{tabular}\newline\newline\newline
+   }%
+   \fi%
+\else
+  \if1\Bwithvat%
+    \def\mnef{\hfill\begin{tabular}{p{0.8\textwidth}l}
+              \variable[-1]{Brescount} \Bproductunit\ des Auftragswert & \bf\Bfullnetprice\ \variable[]{Bcurrency} \\
+               Anzahl der Anteile & \bf\Binvoicecount \\
+               \hline
+               \bf\variable[Netto]{Hnetprice} & \bf\variable[]{Bnetprice} \variable[]{Bcurrency} \\%
+               \bf\variable[MWST]{Hresabsvat} & \bf\variable[]{Bresabsvat} \variable[]{Bcurrency} \\%
+               \bf\variable[Brutto]{Hgrossprice} & \bf\variable[]{Bgrossprice}  \variable[]{Bcurrency} \\%
+    \end{tabular}\newline
+  }%
+  \else
+    \def\mnef{\hfill\begin{tabular}{p{0.8\textwidth}l}
+              \variable[-1]{Brescount} \Bproductunit\ des Auftragswert & \bf\Bfullnetprice\ \variable[]{Bcurrency} \\
+               Anzahl der Anteile & \bf\Binvoicecount \\
+               \hline
+               #mne_lang#Ihr Anteil Total# & \bf\variable[]{Bgrossprice}  \variable[]{Bcurrency} \\%
+              \end{tabular}\newline\newline\newline
+   }%
+  \fi
+\fi
+\if1\Bsortcol\mnef\fi%
+\fi

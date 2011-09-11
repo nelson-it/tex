@@ -1,0 +1,15 @@
+\ifx\mnelangid\mneen%
+\gdef\vendorordernumber{order number}%
+\else
+\gdef\vendorordernumber{Bestellnummer}%
+\fi%
+Wir möchten bei Ihnen folgende Artikel bestellen.
+\begin{longtable}{lllll}
+\hline
+\bf\vendorordernumber &
+\bf\variable[Beschreibung]{Hvendortext}&
+\bf\variable[Anzahl]{Hrescount} &
+\bf\variable[Anzahl]{Hpackagesize} &
+\bf\variable[Anzahl]{Hcount} \\
+\hline
+\medskip \\

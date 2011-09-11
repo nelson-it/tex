@@ -1,0 +1,22 @@
+\def\mnet{\bf\variable[Produktname]{Bproductname}&%
+\bf\variable[]{Bproductunit}&%
+\hfill\bf\variable[Anzahl]{Brescount}&%
+\hfill\bf\variable[Bruttopreis]{Bnetprice} \variable[]{Bcurrency}}%
+\def\mnef{}%
+\if1\Bsortcol\mnet\else\mnef\fi\\%
+%
+\def\mnet{}%
+\if1\Bwithvat%
+  \def\mnef{\\ \hline\\\multicolumn{3}{r}{\bf\variable[Netto]{Hnetprice}}
+               & \hfill\bf\variable[]{Bnetprice} \variable[]{Bcurrency} \\%
+               \multicolumn{3}{r}{\bf\variable[MWST]{Hresabsvat}}
+               & \hfill\bf\variable[]{Bresabsvat} \variable[]{Bcurrency} \\%
+               \multicolumn{3}{r}{\bf\variable[Brutto]{Hgrossprice}} 
+               & \hfill\bf\variable[]{Bgrossprice}  \variable[]{Bcurrency} \\%
+  }%
+\else
+  \def\mnef{\\ \hline\\\multicolumn{3}{r}{#mne_lang#Total#} 
+               & \hfill\bf\variable[]{Bgrossprice}  \variable[]{Bcurrency} \\%
+  }%
+\fi
+\if1\Bsortcol\mnet\else\mnef\fi%

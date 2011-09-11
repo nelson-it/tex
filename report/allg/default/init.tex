@@ -1,0 +1,13 @@
+\gdef\mnelang{german}
+\def\mneen{en}
+\ifx\mnelangid\mneen\gdef\mnelang{english}\fi
+\expandafter\if\expandafter\csname ganzsicherleer\endcsname\csname mnelandscape\endcsname\gdef\mnelandscape{}\fi%
+\input{mneinit.sty}
+\documentclass[\mnepaper,\mnetwoside,\mnelandscape]{article}
+\usepackage{mnedefault}
+\pagestyle{mnedefault}
+%\pagenumbering{roman}
+\special{pdf: docinfo << /Author (M.Nelson) /Title (Default Report) >>}
+%\special{pdf: pagesize width 148mm height 210mm}
+\begin{document}
+\thispagestyle{firstmnedefault}

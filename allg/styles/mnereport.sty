@@ -1,0 +1,31 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mnereport}
+              [2004/12/22 v0.9 the report environment by M.Nelson]
+\newcommand\mnetablebody[1]{%
+  \gdef\Mnetablebody{#1}}%
+\mnetablebody{}%
+%
+\newcommand\mnetablefirsthead[1]{%
+  \gdef\Mnetablefirsthead{#1}}%
+\mnetablefirsthead{}%
+%
+\newcommand\mnetablehead[1]{%
+  \gdef\Mnetablehead{#1}}%
+\mnetablehead{}%
+%
+\newcommand\mnetableformat[1]{%
+  \gdef\Mnetableformat{#1}}%
+\mnetableformat{}%
+%
+\oddsidemargin0mm
+\topmargin0mm
+\textheight250mm
+\textwidth150mm
+\footskip40mm
+%\footheight20mm
+
+\DeclareOption{landscape}
+   {\setlength\@tempdima{\textheight}%
+    \setlength\textheight{\textwidth}%
+    \setlength\textwidth{\@tempdima}}
+\ProcessOptions
