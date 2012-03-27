@@ -1,8 +1,7 @@
 \usepackage[utf8x]{inputenc} 
 \usepackage{german}
 \usepackage{longtable}
-\usepackage{color}
-\usepackage{colortbl}
+\usepackage[table]{xcolor}
 \usepackage{graphicx}
 \usepackage{totpages}
 \def\empty{}%
@@ -21,7 +20,9 @@
     \hfill}
     \vskip-20cm\vfill}\hskip-20cm\hfill}}%
 %
-\definecolor{tabheadbg}{rgb}{.38,.38,1.0}
+%\definecolor{tabheadbg}{rgb}{.38,.38,1.0}
+%\definecolor{tabheadfg}{rgb}{1,1,1}
+\definecolor{tabheadbg}{rgb}{0.40,0.40,0.40}
 \definecolor{tabheadfg}{rgb}{1,1,1}
 
 \definecolor{tabhlbg}{rgb}{.80,.80,.80}
@@ -38,3 +39,18 @@
 \definecolor{sumcolor1}{rgb}{1,1,1}%
 \definecolor{sumcolor2}{rgb}{0.80,0.80,0.80}%
 \definecolor{sumcolor3}{rgb}{0.60,0.60,0.60}%
+%
+\def\mkday#1{%
+      \ifx\mnelangid\mneen%
+         \if1#1Sun\else\if2#1Mon\else\if3#1Tue\else\if4#1Wed\else\if5#1Thu\else\if6#1Fri\else\if7#1Sat\fi\fi\fi\fi\fi\fi\fi%
+      \else%
+          \if1#1So\else\if2#1Mo\else\if3#1Di\else\if4#1Mi\else\if5#1Do\else\if6#1Fr\else\if7#1Sa\fi\fi\fi\fi\fi\fi\fi%
+      \fi%
+}%
+\def\mklday#1{%
+      \ifx\mnelangid\mneen%
+         \if1#1Sunday\else\if2#1Monday\else\if3#1Tuesday\else\if4#1Wednesday\else\if5#1Thursday\else\if6#1Friday\else\if7#1Saturday\fi\fi\fi\fi\fi\fi\fi%
+      \else%
+          \if1#1Sontag\else\if2#1Montag\else\if3#1Dienstag\else\if4#1Mittwoch\else\if5#1Donnerstag\else\if6#1Freitag\else\if7#1Samstag\fi\fi\fi\fi\fi\fi\fi%
+      \fi%
+}%

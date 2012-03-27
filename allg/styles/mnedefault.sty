@@ -29,7 +29,8 @@
 % Standardschrift ändern
 %\renewcommand{\rmdefault}{cmss}
 %
-\def\mnedefaulttitle{\variable[Report]{reptitle}}
+\def\reptitle{Report}%
+\def\mnedefaulttitle{\reptitle}%
 \def\ps@firstmnedefault{\let\@mkboth=\markboth%
     \def\@evenhead{{\if\checkvariable{watermark}1\watermarkred{\watermark}\fi}%
                   \setbox0=\vbox{\vskip4pt\hbox{\hskip4pt\huge\bf\mnedefaulttitle}\vskip4pt}
