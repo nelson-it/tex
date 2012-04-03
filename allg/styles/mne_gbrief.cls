@@ -23,7 +23,7 @@
   \def\emailtext{{\footnotesize E--Mail\/:}}
   \def\httptext{{\footnotesize HTTP\/:}}
   \def\banktext{{\footnotesize Bankverbindung\/:}}
-  \def\blztext{{\footnotesize IBAN}}
+  \def\blztext{{\footnotesize Blz\/:}}
   \def\kontotext{{\footnotesize Kto.}}
   \def\betrefftext{{\normalsize Betr.:}}
   \def\ihrzeichentext{\footnotesize\textsc{Ihr Zeichen}}
@@ -118,6 +118,8 @@
 \def\Bank#1{\def\bank{#1}} \def\bank{}
 \def\BLZ#1{\def\blz{#1}} \def\blz{}
 \def\Konto#1{\def\konto{#1}} \def\konto{}
+\def\Kontoleer#1{\def\kontoleer{#1}} \def\kontoleer{}
+\def\Withbank{\def\withbank{bank}}\def\withbank{}
 
 \def\Postvermerk#1{\def\postvermerk{#1}} \def\postvermerk{}
 \def\Adresse#1{\def\adresse{#1}} \def\adresse{}
@@ -221,9 +223,9 @@
   \def\@oddhead{
     \unitlength1mm
     \begin{picture}(0,0)
-	  \put(-9, 9){\logo}
       \put(0, 3){\parbox{180mm}{\Large \ifklassisch \textsl{\quad\name}
           \else \textsf{\quad\name} \fi\hfill}}
+	  \put(-9, 9){\logo}
       \iftrennlinien \put(-9,-7){\rule{180mm}{0.5pt}} \fi
       \iflochermarke \put(-20,- 130.50){\line(1,0){4}} \fi
       \iffaltmarken \put(-15,- 75.16){\line(1,0){3}}

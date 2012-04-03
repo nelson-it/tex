@@ -1,0 +1,78 @@
+% bank-Option, setzt Bankverbindung
+\newif\if@bank
+\@bankfalse
+\DeclareOption{bank}{\@banktrue}
+
+\newif\if@intl
+\@intlfalse
+\DeclareOption{intl}{\@intltrue}
+
+\newif\if@unter
+\@unterfalse
+\DeclareOption{unter}{\@untertrue}
+
+\newif\if@en
+\@enfalse
+\DeclareOption{en}{\@entrue}
+\DeclareOption{de}{}
+
+\ProcessOptions
+
+\lochermarke
+\faltmarken
+%\fenstermarken
+%\trennlinien
+%\klassisch
+
+\usepackage{mnemacros}
+\usepackage{letterheadbb}
+
+\Logo{\if1\checkvariable{letterheadpic}\hskip-18mm\raisebox{-3cm}{\hbox{\includegraphics[width=21cm,bbllx=0, bblly=0, bburx={\variable[4096]{letterheadwidth}}, bbury={\variable[1078]{letterheadheight}}]{\letterheadpic}}}\fi}%
+
+\Name                {\if\checkvariable{watermark}1\watermarkred{\watermark}\fi%
+                      \vbox{\hbox{\sf\Huge \variable[]{uprefuowncompany}}}}
+
+\Strasse             {\variable[]{uprefuownstreet}}
+\Zusatz              {}
+
+\if@intl
+   \Telefon             {+ \variable[]{uownphoneprefix} \variable[]{uprefuowntelefon}}
+   \Ort                 {\variable[]{uprefuowncountrycarcode} \variable[]{uprefuownpostcode} \variable[]{uprefuowncity}}
+   \if@en\Land          {\variable[]{uprefuowncountryname_en}}
+   \else\Land           {\variable[]{uprefuowncountryname_de}}
+   \fi
+   \RetourAdresse       {\variable[]{uprefuowncompany}\variable[]{uprefuownstreet} \variable[]{uprefuowncountrycarcode} \variable[]{uprefuownpostcode} \variable[]{uprefuowncity}}
+\else
+   \Telefon             {0\variable[]{uprefuowntelefon}}
+   \Ort                 {\variable[]{uprefuownpostcode} \variable[]{uprefuowncity}}
+   \Land                {}
+   \RetourAdresse       {\variable[]{uprefuowncompany} \variable[]{uprefuownstreet} \variable[]{uprefuownpostcode} \variable[]{uprefuowncity}}
+\fi
+
+\Telefax             {}
+\Telex               {}
+\HTTP                {\variable[]{uprefuownhttp}}
+\EMail               {\variable[]{uprefuownemail}}
+
+\if@bank
+    \Bank                {\variable[]{uprefuownbank}}
+    \BLZ                 {\variable[]{uprefuownblz}}
+
+    \Kontoleer           { }
+    \Konto               {\variable[]{uprefuownaccount} }
+    \if\kontoleer\konto\def\kontotext{}\def\blztext{{\footnotesize IBAN}}\fi
+\fi
+
+\Unterschrift        {\hspace{1cm}}
+
+\Postvermerk         {}
+
+%\Datum               {\today}
+
+\if@en
+       \Gruss        {Yours sincerely}{1cm}
+\else
+      \Gruss        {Freundliche Grüsse}{1cm}
+\fi
+
+\def\leerzeichen{ }%

@@ -12,7 +12,7 @@
 \def\variable[#1]#2{\if1\checkvariable{#2}\csname#2\endcsname\else#1\fi}%
 %
 \def\watermarkred#1{\hbox to 0cm{%
-  \vbox to 0cm{\hbox to \textwidth{%
+  \vbox to 0cm{\vskip4cm\hbox to \textwidth{%
     \special{pdf: bc [ 1 0.5 0.5]}%
     \special{pdf: bt rotate 315 scale 10.0 }#1\hfill%
     \special{pdf: et}%

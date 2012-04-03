@@ -41,7 +41,7 @@
     \def\@evenfoot{\thepage\hfill}%
     \def\@oddhead{{\if\checkvariable{watermark}1\watermarkred{\watermark}\fi}%
                   \setbox0=\vbox{\vskip4pt\hbox{\huge\bf\mnedefaulttitle\hskip4pt}\vskip4pt}
-                  \setbox1=\vbox{\hbox{\@firstname\@firstlogo}\vskip4pt}%
+                  \setbox1=\vbox{\hbox{\@firstname\@firstlogo}\vskip0pt}%
                   \dimen1=\textwidth\advance\dimen1 by -\wd0%
                   \message{\the\dimen1 \the\wd1}
                    \ifdim\wd1 > \dimen1%

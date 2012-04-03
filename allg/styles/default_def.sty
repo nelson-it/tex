@@ -1,0 +1,16 @@
+% Standardschrift ändern
+%\renewcommand{\rmdefault}{cmss}
+
+\usepackage{reportheadbb}
+\def\@firstlogo{\if1\checkvariable{reportheadpic}%
+    \setbox0=\vbox{\includegraphics[width=105mm,bbllx={\variable[0]{reportheadleft}},
+                                                bblly={\variable[0]{reportheadtop}},
+                                                bburx={\variable[4096]{reportheadwidth}},
+                                                bbury={\variable[1078]{reportheadheight}}]{\reportheadpic}}%
+    {\vbox to 0mm{\vskip-\ht0\hbox to 105mm{\box0}}}
+    \fi}%
+\def\@firstname{\if1\checkvariable{reportheadpic}\else\vbox{\hbox{\sf\huge \variable[]{uprefuowncompany}}}\fi}%
+%
+\def\@logo{\raisebox{-0.65\baselineskip}{\vbox{\vskip-0mm\hbox{\includegraphics[height=\baselineskip]{nti_logo.eps}}}}}
+\def\@name{\hbox{\sf\normalsize \variable[]{uprefuowncompany}}}%
+%
