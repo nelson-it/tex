@@ -1,0 +1,23 @@
+\def\mnedefaulttitle{\variable[kein Titel]{reptitle}}
+{\if\checkvariable{subreptitle}1\medskip\large\bf\subreptitle :\smallskip\fi}
+{%
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength\LTpre{0pt}
+\setlength\LTpost{0pt}
+\begin{longtable}{@{}l@{\extracolsep\fill}|p{3cm}|l|r|r|r|p{3cm}|}
+\hline%
+\makebox[0pt][l]{\fboxsep0pt\colorbox{tabheadbg}{\strut\hspace*{\textwidth}}} &
+\color{tabheadfg}\bf\variable[Projektnummer]{Hpartdescription}&
+\color{tabheadfg}\bf\variable[Produktname]{Hunit}&
+\color{tabheadfg}\bf\variable[Produktnummer]{Hsumcount}&
+\color{tabheadfg}\bf\variable[Projektname]{Hpartcost}&
+\color{tabheadfg}\bf\variable[Tag]{Hpartcostsum}&
+\color{tabheadfg}\bf\variable[Datum]{Hpartname}\\
+\makebox[0pt][l]{\fboxsep0pt\colorbox{tabheadbg}{\strut\hspace*{\textwidth}}} &
+&
+&
+&
+&
+&
+\color{tabheadfg}\bf\variable[Datum]{Hfixturetype}

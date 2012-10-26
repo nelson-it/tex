@@ -10,9 +10,16 @@
 \if\checkvariable{Bdate}1\def\datum{\Bdate}\fi
 
 \Adresse{
-\Binvoicecompany\\%
-\Binvoicecontact \\%
-\\
+%\Binvoicecompany\\%
+%\Binvoicecontact \\%
+%\\
+\if1\checkvariable{Binvoicecompany}\Binvoicecompany\else\if1\checkvariable{Brefname}\Brefname\else\variable[kein Name]{Bname}\fi\fi\\%
+\if1\checkvariable{Binvoicecompany}%
+  \if\checkvariable{Binvoicecontact}1%
+    \Binvoicecontact\\
+  \fi%
+\fi%
+ \\
 \if1\checkvariable{Bpostbox}\postboxstring\ \Bpostbox\else\variable[]{Bstreet}\fi\\
 \if1\checkvariable{Bcountrycarcode}\Bcountrycarcode \ \fi\variable[]{Bpostcode} \variable[]{Bcity}\\
 \if\checkvariable{Bcountry}1\Bcountry\fi\\

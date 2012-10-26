@@ -1,11 +1,17 @@
-\def\mnet{ \\\bf\variable[Produktname]{Bproductname}&
+\def\mnet{\\\bf\variable[Produktname]{Bproductname}&
 \bf\Bproductunit&
 \bf\variable[Anzahl]{Bproductcount}&
 \hfill\expandafter\if\variable[0]{Blumpsum}0\if\Bpriceisnull0\bf\variable[Bruttopreis]{Bsumnet}\ \variable[]{Bcurrency}\fi\fi}
 \def\mnef{\\}%
 \if1\Bsortcol\if-\Bproductunit\else\mnet\fi\else\mnef\fi
 %
-\def\mnet{\\\multicolumn{4}{l}{\begin{minipage}[t]{12cm}\Bproductdescription\bigskip\end{minipage}}\\}%
+\if\empty1\Bproductdescription1%  
+  \gdef\mnet{}%
+  \gdef\mneendrecord{}%
+\else%
+  \gdef\mnet{\\\multicolumn{4}{l}{\begin{minipage}[t]{12cm}\Bproductdescription\end{minipage}}}%
+  \gdef\mneendrecord{\medskip}%
+\fi%
 \if1\Bwithvat\def\mnef{\\ \hline\\\multicolumn{3}{r}{\bf\variable[]{Hsumnet}}
                & \hfill\bf\variable[]{Bsumnet} \variable[]{Bcurrency} \\%
                \multicolumn{3}{r}{\bf\variable[]{Hsumabsvat}}

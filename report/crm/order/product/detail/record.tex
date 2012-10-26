@@ -1,0 +1,17 @@
+{\if\checkvariable{subreptitle}1\medskip\large\bf\subreptitle :\medskip\newline\fi}
+{\large\bf Detail:}\medskip\newline
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular*}{\textwidth}{|V{0.15\textwidth}|p{0.30\textwidth}|V{0.15\textwidth}|@{\extracolsep\fill}p{0.30\textwidth}|}%
+\hline%
+\textcolor{tabheadfg}{\variable[productname]{Hproductname}:} & \multicolumn{3}{p{0.75\textwidth}|}{\bf\variable[]{Bproductname}} \\%
+\hline
+\textcolor{tabheadfg}{\Hproductdescription:}& \multicolumn{3}{p{0.75\textwidth}|}{\Bproductdescription} \\
+\hline
+\textcolor{tabheadfg}{\Hproductcount:} & \multicolumn{3}{p{0.75\textwidth}|}{\Bproductcount} \\
+\hline
+\textcolor{tabheadfg}{\Hnet:} & \Bnet\ \Bcurrency &\textcolor{tabheadfg}{\Hsumnet:} & \Bsumnet\ \Bcurrency \\
+\hline
+\textcolor{tabheadfg}{\Hproductcost:} & \Bproductcost\ \Bocurrency & \textcolor{tabheadfg}{\Hsumproductcost:} & \Bsumproductcost\ \Bocurrency  \\
+\hline
+\end{tabular*}\par
+\renewcommand{\arraystretch}{1.0}
