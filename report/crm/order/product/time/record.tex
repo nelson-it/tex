@@ -1,0 +1,27 @@
+\def\mneeins{%
+\\
+\hline
+&
+\Bstep&
+\Bskilltext&
+\Bdescription&
+\Bsetduration&
+\Btimecostsumset
+}%
+\def\mnezwei{\\%
+\hline\makebox[0pt][l]{\fboxsep0pt\colorbox{sumcolor2}{\strut\hspace*{\textwidth}}} &
+\Bstep&
+\Bskilltext&
+\Bdescription&
+\Bsetduration&
+\Btimecostsumset
+}%
+\def\mnedrei{\\%
+\hline\makebox[0pt][l]{\fboxsep0pt\colorbox{sumcolor3}{\strut\hspace*{\textwidth}}} &
+\bf\Bstep&
+\bf\Bskilltext&
+\bf\Bdescription&
+\bf\Bsetduration&
+\bf\Btimecostsumset
+}%
+\if1\Browtyp\mneeins\else\if2\Browtyp\mnezwei\else\mnedrei\fi\fi

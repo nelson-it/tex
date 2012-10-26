@@ -1,0 +1,15 @@
+\def\mnedefaulttitle{\variable[kein Titel]{reptitle}}
+{\if\checkvariable{subreptitle}1\medskip\large\bf\subreptitle :\smallskip\fi}
+{%
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength\LTpre{0pt}
+\setlength\LTpost{0pt}
+\begin{longtable}{@{}l@{\extracolsep\fill}|l|l|p{7.5cm}|l|r|}
+\hline%
+\makebox[0pt][l]{\fboxsep0pt\colorbox{tabheadbg}{\strut\hspace*{\textwidth}}} &
+\color{tabheadfg}\bf\variable[Schritt]{Hstep}&
+\color{tabheadfg}\bf\variable[Qualifikation]{Hskilltext}&
+\color{tabheadfg}\bf\variable[Tätigkeit]{Hdescription}&
+\color{tabheadfg}\bf\variable[Zeit]{Hsetduration}&
+\color{tabheadfg}\bf\variable[Kosten]{Htimecostsumset}
