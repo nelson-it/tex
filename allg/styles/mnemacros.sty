@@ -8,7 +8,8 @@
 %
 \renewcommand{\rmdefault}{cmss}
 %
-\def\checkvariable#1{\expandafter\if\expandafter\csname ganzsicherleer\endcsname\csname#1\endcsname0\else\expandafter\ifx\csname#1\endcsname\empty0\else1\fi\fi}%
+\def\variableexists#1{\expandafter\if\expandafter\csname ganzsicherleer\endcsname\csname#1\endcsname0\else1\fi}%
+\def\checkvariable#1{\expandafter\if\expandafter\csname ganzsicherleer\endcsname\csname#1\endcsname0\else\expandafter\ifx\csname#1\endcsname\empty\else1\fi\fi}%
 \def\variable[#1]#2{\if1\checkvariable{#2}\csname#2\endcsname\else#1\fi}%
 %
 \def\watermarkred#1{\hbox to 0cm{%

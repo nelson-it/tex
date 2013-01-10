@@ -12,8 +12,10 @@
 \Adresse{
 \if1\checkvariable{Bcompany}\Bcompany\else\if1\checkvariable{Brefname}\Brefname\else\variable[kein Name]{Bname}\fi\fi\\%
 \if1\checkvariable{Bcompany}%
-  \if\checkvariable{Bcontactname}1%
-    \Bcontactname\\
+  \if\variableexists{Bcontactname}1%
+    \if\checkvariable{Bcontactname}1%
+      \Bcontactname\\
+    \fi%
   \else%
     \if\checkvariable{Bname}1
       \ifx\Bname\leerzeichen\else\Bname\\\fi
