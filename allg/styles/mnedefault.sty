@@ -3,8 +3,16 @@
               [2004/12/22 v0.9 the report environment by M.Nelson]%
 \usepackage{mnemacros}
 \usepackage{default_def}
+\usepackage[dvipdfm]{hyperref}
 %Seitengrösse einstellen
 %
+\definecolor{MneLinkColor}{rgb}{0.6,0.6,0.6} 
+\hypersetup{backref,  
+pdfpagemode=FullScreen,  
+colorlinks=true,
+urlcolor=MneLinkColor,
+linkcolor=black
+} 
 \oddsidemargin-1in%
 \evensidemargin-1in%
 \advance\oddsidemargin by 30mm
@@ -38,7 +46,7 @@
                   \dimen0=\textwidth\advance\dimen0 by -\wd0%
                    \hbox{\vbox{\hbox to \dimen0{\box1\hfill}\hrule}}%
                    \hbox{\vrule\vbox{\hrule\vskip2pt\hbox to \wd0{\box0}}}}%
-    \def\@evenfoot{\thepage\hfill}%
+    \def\@evenfoot{\vbox{\hbox to \textwidth{\thepage\hfill\href{http://www.nelson-it.ch}{Nelson Erp}\@logo}}}%
     \def\@oddhead{{\if\checkvariable{watermark}1\watermarkred{\watermark}\fi}%
                   \setbox0=\vbox{\vskip4pt\hbox{\huge\bf\mnedefaulttitle\hskip4pt}\vskip4pt}
                   \setbox1=\vbox{\hbox{\@firstname\@firstlogo}\vskip0pt}%
@@ -60,11 +68,11 @@
                   \fi
                    \hbox{\vbox{\hrule\vskip2pt\hbox to \wd0{\box0}}\vrule}%
                    \hbox{\vbox{\hbox to \dimen1{\hfill\box1}\hrule}}}%
-    \def\@oddfoot{\hfill\thepage}%
+    \def\@oddfoot{\vbox{\hbox to \textwidth{\@logo\ \href{http://www.nelson-it.ch}{Nelson Erp} \hfill\thepage}}}%
 }%
 \def\ps@mnedefault{\let\@mkboth=\markboth%
     \def\@evenhead{\vbox{\hbox to \textwidth{\thepage\hfill\bf\mnedefaulttitle}\vskip4pt\hrule}}%
-    \def\@evenfoot{\vbox{\hrule\hbox to \textwidth{\@logo\@name\hfill}}}%
+    \def\@evenfoot{\vbox{\hrule\hbox to \textwidth{\@logo\ \href{http://www.nelson-it.ch}{Nelson Erp}\hfill}}}%
     \def\@oddhead{\vbox{\hbox to \textwidth{\bf\mnedefaulttitle\hfill\rm\thepage}\vskip4pt\hrule}}%
-    \def\@oddfoot{\vbox{\hrule\hbox to \textwidth{\hfill\@name\@logo}}}%
+    \def\@oddfoot{\vbox{\hrule\hbox to \textwidth{\hfill\@logo\ \href{http://www.nelson-it.ch}{Nelson Erp}}}}%
 }%
