@@ -1,5 +1,6 @@
 \usepackage[utf8x]{inputenc} 
-\usepackage{german}
+\usepackage[ngerman]{babel}
+\usepackage{textcomp}
 \usepackage{longtable}
 \usepackage[table]{xcolor}
 \usepackage{graphicx}
@@ -21,8 +22,6 @@
     \hfill}
     \vskip-20cm\vfill}\hskip-20cm\hfill}}%
 %
-%\definecolor{tabheadbg}{rgb}{.38,.38,1.0}
-%\definecolor{tabheadfg}{rgb}{1,1,1}
 \definecolor{tabheadbg}{rgb}{0.9,0.9,0.9}
 \definecolor{tabheadfg}{rgb}{0,0,0}
 
@@ -55,3 +54,19 @@
           \if1#1Sontag\else\if2#1Montag\else\if3#1Dienstag\else\if4#1Mittwoch\else\if5#1Donnerstag\else\if6#1Freitag\else\if7#1Samstag\fi\fi\fi\fi\fi\fi\fi%
       \fi%
 }%
+%
+\def\firstletter#1#2#3#4{\let\flag=1\gdef\doflettercheck{#2}\gdef\dofletterprint{#3}\gdef\dofletterneg{#4}\expandafter\dofletter#1\endlist}
+\def\dofletter{\afterassignment\dofl\let\next= }
+\def\dofl{%
+\ifx\next\endlist\let\next\relax%
+\else%
+\if\flag1%
+  \if\dofletterneg n%
+    \if\next\doflettercheck\else\dofletterprint\fi%
+  \else%
+    \if\next\doflettercheck\dofletterprint\fi%
+  \fi\let\flag0%
+\fi%
+\let\next\dofletter\fi\next%
+}%
+
