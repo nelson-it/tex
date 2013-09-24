@@ -11,6 +11,7 @@
 \newdimen\VorschubV
 \VorschubH = 0.0mm
 \VorschubV = 0.0mm
+\usepackage[utf8x]{inputenc} 
 
 \DeclareOption{10pt}{\def\@schrift{0}}
 \DeclareOption{11pt}{\def\@schrift{1}}
