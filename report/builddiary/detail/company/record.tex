@@ -1,6 +1,6 @@
 \Brole &
 \Bcompany &
-\Bfullname &
+\def\checkx{x}\if\checkx\Bpselfpresent \Bfullname\fi &
 \Bcount &
-\Bcomment \\
+\setbox0=\vbox{\Bcomment}\parbox[t]{\wd0}{\Bcomment} \\
 \hline
