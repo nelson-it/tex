@@ -1,15 +1,12 @@
+\fboxrule\arrayrulewidth%
 \medskip
-\begin{longtable}{|p{0.12\textwidth}|p{0.23\textwidth}|p{0.15\textwidth}|c|p{0.3325\textwidth}|}
-\hline
-\rowcolor{tabheadbg}
-\multicolumn{5}{|l|}{\makebox[0pt][l]{\Large\bf\hspace{-\tabcolsep}\fboxsep0pt\colorbox{tabheadbg}{\strut\hspace*{\textwidth}\hspace{-2\arrayrulewidth}}}%
+\tabdimen\textwidth\advance\tabdimen by -10\tabcolsep\advance\tabdimen by -6\arrayrulewidth%
+\begin{longtable}{|p{0.15\tabdimen}|p{0.23\tabdimen}|p{0.15\tabdimen}|p{0.1375\tabdimen}|p{0.3325\tabdimen}|}
+\multicolumn{5}{l}{\makebox[0pt][l]{\Large\bf\hspace{-\tabcolsep}\fboxsep0pt\fcolorbox{black}{tabheadbg}{\strut\hspace*{\textwidth}\hspace{-2\arrayrulewidth}}}%
 \textcolor{tabheadfg}{\Large\bf\variable[Firmen]{subreptitle}}} \\
-\hline
-\rowcolor{tabheadbg}
-\makebox[0pt][l]{\hspace{-\tabcolsep}\fboxsep0pt\colorbox{tabheadbg}{\strut\hspace*{\textwidth}\hspace{-2\arrayrulewidth}}}%
+\makebox[0pt][l]{\hspace{-\tabcolsep}\hspace{-\arrayrulewidth}\fboxsep0pt\fcolorbox{black}{tabheadbg}{\strut\hspace*{\textwidth}\hspace{-2.5\arrayrulewidth}}}%
 \textcolor{tabheadfg}{\bf\variable[]{Hrole}} &
 \textcolor{tabheadfg}{\bf\variable[]{Hcompany}} &
 \textcolor{tabheadfg}{\bf\variable[]{Hfullname}} &
 \textcolor{tabheadfg}{\bf\variable[]{Hcount}} &
 \textcolor{tabheadfg}{\bf\variable[]{Hcomment}} \\
-\hline
