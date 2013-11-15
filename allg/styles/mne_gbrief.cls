@@ -269,10 +269,8 @@
             \email\empty \else \emailtext & \email \\ \fi \ifx
             \http\empty \else \httptext & \http \\ \fi \
           \end{tabular}\hfill
-          \begin{tabular}{ll}
-            \ifx \bank\empty \else \ifx \blz\empty \else \ifx
-            \konto\empty \else \banktext & \bank \\ & \blztext \space \blz
-            \\ & \kontotext \space \konto \\ \ \fi \fi \fi
+          \begin{tabular}{lrl}
+            \ifx \bank\empty \else \ifx \blz\empty \else \ifx \konto\empty \else \banktext & \multicolumn{2}{l}{\bank} \\ &\blztext :&\blz \\ &\kontotext :&\konto \\ \ \fi \fi \fi
           \end{tabular}}}
     \end{picture} \hfill}
   \def\@evenhead{\@oddhead} \def\@evenfoot{\@oddfoot}}
