@@ -5,7 +5,7 @@
 \def\mnef{\\}%
 \if1\Bsortcol\if-\Bproductunit\else\mnet\fi\else\mnef\fi
 %
-\if\empty1\Bproductdescription1%  
+\ifx\empty\Bproductdescription%  
   \gdef\mnet{}%
   \gdef\mneendrecord{}%
 \else%
