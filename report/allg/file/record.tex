@@ -1,1 +1,6 @@
+\def\emptytext{{}}%
+\ifx\pretext\emptytext\gdef\pretext{\ }\fi%
+\ifx\pretext\empty\gdef\pretext{\ }\fi%
+\ifx\Bsource\empty\gdef\Bsource{\ }\fi%
+\ifx\Bsource\emptytext\gdef\Bsource{\ }\fi%
 \if\checkvariable{watermark}1\pretext\else\if\checkvariable{preprint}1\pretext\else\Bsource\fi\fi
