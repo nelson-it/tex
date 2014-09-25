@@ -7,26 +7,35 @@
 \Anlagen             {}
 \Verteiler           {}
 
+\if\checkvariable{Bfirstreminderdate}1\Datum{\Bfirstreminderdate}\fi
+
 \Adresse{
-\Binvoicecompany\\%
-\Binvoicecontact \\%
-\\
+%\Binvoicecompany\\%
+%\Binvoicecontact \\%
+%\\
+\if1\checkvariable{Binvoicecompany}\Binvoicecompany\else\if1\checkvariable{Brefname}\Brefname\else\variable[kein Name]{Bname}\fi\fi\\%
+\if1\checkvariable{Binvoicecompany}%
+  \if\checkvariable{Binvoicecontact}1%
+    \Binvoicecontact\\
+  \fi%
+\fi%
+ \\
 \if1\checkvariable{Bpostbox}\postboxstring\ \Bpostbox\else\variable[]{Bstreet}\fi\\
 \if1\checkvariable{Bcountrycarcode}\Bcountrycarcode \ \fi\variable[]{Bpostcode} \variable[]{Bcity}\\
 \if\checkvariable{Bcountry}1\Bcountry\fi\\
 }
-\if\checkvariable{Bfirstreminderdate}1\Datum{\Bfirstreminderdate}\fi
 \ifx\mnelangid\mneen%
 \Betreff{first reminder\newline\Blettersubject}%
 \else
 \Betreff{1.Mahnung\newline\Blettersubject}%
 \fi
-\Anrede{}%
+\if\checkvariable{nosalutation}0\Anrede{\variable[\defaultsalutation]{Blettersalutation},}\fi%
 \begin{g-brief}
 \ifx\mnelangid\mneen%
 The invoice are not payed. Please payed it until the next 14 days.
 \else
-Zu der oben genannten Rechnung ist bei uns noch kein Zahlungseingang
-erfolgt. Wir bitten sie den Betrag inner 14 Tage zu begleichen
+Zu der oben genannten Rechnung ist bei uns noch keine Zahlung eingegangen.\\
+Wir bitten sie den Betrag inner 14 Tage zu begleichen.
 \fi
 \par
+
