@@ -1,1 +1,7 @@
-\input allg/letter/init.tex
+\gdef\mnelang{german}
+\def\mneen{en}
+\ifx\mnelangid\mneen\gdef\mnelang{english}\fi
+%
+\documentclass[a4paper,\mnelang,addrrechts]{mne_gbrief}
+\usepackage[\mnelangid,bank]{gbrief_def} 
+%
