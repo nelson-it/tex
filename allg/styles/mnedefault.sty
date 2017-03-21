@@ -37,8 +37,10 @@ linkcolor=black
 % Standardschrift ändern
 %\renewcommand{\rmdefault}{cmss}
 %
-\def\reptitle{Report}%
+%\def\reptitle{Report}%
+\expandafter\if\expandafter\csname ganzsicherleer\endcsname\csname reptitle\endcsname\gdef\reptitle{Report}\fi%
 \def\mnedefaulttitle{\reptitle}%
+%
 \def\ps@firstmnedefault{\let\@mkboth=\markboth%
     \def\@evenhead{{\if\checkvariable{watermark}1\watermarkred{\watermark}\fi}%
                   \setbox0=\vbox{\vskip4pt\hbox{\hskip4pt\huge\bf\mnedefaulttitle}\vskip4pt}
@@ -46,7 +48,7 @@ linkcolor=black
                   \dimen0=\textwidth\advance\dimen0 by -\wd0%
                    \hbox{\vbox{\hbox to \dimen0{\box1\hfill}\hrule}}%
                    \hbox{\vrule\vbox{\hrule\vskip2pt\hbox to \wd0{\box0}}}}%
-    \def\@evenfoot{\vbox{\hbox to \textwidth{\thepage\hfill\href{http://www.nelson-it.ch}{Nelson Erp}\@logo}}}%
+    \def\@evenfoot{\vbox{\hbox to \textwidth{\thepage\hfill\href{http://www.nelson-it.ch}{Nelson - technische Informatik}\@logo}}}%
     \def\@oddhead{{\if\checkvariable{watermark}1\watermarkred{\watermark}\fi}%
                   \setbox0=\vbox{\vskip4pt\hbox{\huge\bf\mnedefaulttitle\hskip4pt}\vskip4pt}
                   \setbox1=\vbox{\hbox{\@firstname\@firstlogo}\vskip0pt}%
@@ -68,11 +70,11 @@ linkcolor=black
                   \fi
                    \hbox{\vbox{\hrule\vskip2pt\hbox to \wd0{\box0}}\vrule}%
                    \hbox{\vbox{\hbox to \dimen1{\hfill\box1}\hrule}}}%
-    \def\@oddfoot{\vbox{\hbox to \textwidth{\@logo\ \href{http://www.nelson-it.ch}{Nelson Erp} \hfill\thepage}}}%
+    \def\@oddfoot{\vbox{\hbox to \textwidth{\@logo\ \href{http://www.nelson-it.ch}{Nelson - technische Informatik} \hfill\thepage}}}%
 }%
 \def\ps@mnedefault{\let\@mkboth=\markboth%
     \def\@evenhead{\vbox{\hbox to \textwidth{\thepage\hfill\bf\mnedefaulttitle}\vskip4pt\hrule}}%
-    \def\@evenfoot{\vbox{\hrule\hbox to \textwidth{\@logo\ \href{http://www.nelson-it.ch}{Nelson Erp}\hfill}}}%
+    \def\@evenfoot{\vbox{\hrule\hbox to \textwidth{\@logo\ \href{http://www.nelson-it.ch}{Nelson - technische Informatik}\hfill}}}%
     \def\@oddhead{\vbox{\hbox to \textwidth{\bf\mnedefaulttitle\hfill\rm\thepage}\vskip4pt\hrule}}%
-    \def\@oddfoot{\vbox{\hrule\hbox to \textwidth{\hfill\@logo\ \href{http://www.nelson-it.ch}{Nelson Erp}}}}%
+    \def\@oddfoot{\vbox{\hrule\hbox to \textwidth{\hfill\@logo\ \href{http://www.nelson-it.ch}{Nelson - technische Informatik}}}}%
 }%
