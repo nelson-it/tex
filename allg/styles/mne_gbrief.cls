@@ -30,7 +30,9 @@
   \def\ihrzeichentext{\footnotesize\textsc{Ihr Zeichen}}
   \def\ihrschreibentext{\footnotesize\textsc{Ihr Schreiben vom}}
   \def\meinzeichentext{\footnotesize\textsc{Mein Zeichen}}
+  \def\meinschreibentext{\footnotesize\textsc{Mein Schreiben vom}}
   \def\unserzeichentext{\footnotesize\textsc{Unser Zeichen}}
+  \def\unserschreibentext{\footnotesize\textsc{Unser Schreiben vom}}
   \def\datumtext{\footnotesize\textsc{Datum}}
   \def\datum{\number\day.~\ifcase\month\or Januar\or Februar\or
     M\"arz\or April\or Mai\or Juni\or Juli\or August\or September\or
@@ -49,7 +51,9 @@
   \def\ihrzeichentext{\footnotesize\textsc{Your Ref.}}
   \def\ihrschreibentext{\footnotesize\textsc{Your Mail}}
   \def\meinzeichentext{\footnotesize\textsc{My Ref.}}
+  \def\meinschreibentext{\footnotesize\textsc{My Mail}}
   \def\unserzeichentext{\footnotesize\textsc{Our Ref.}}
+  \def\unserschreibentext{\footnotesize\textsc{Our Mail}}
   \def\datumtext{\footnotesize\textsc{Date}}
   \def\datum{\today}}
 \DeclareOption{american}{
@@ -66,7 +70,9 @@
   \def\ihrzeichentext{\footnotesize\textsc{Your Ref.}}
   \def\ihrschreibentext{\footnotesize\textsc{Your Mail}}
   \def\meinzeichentext{\footnotesize\textsc{My Ref.}}
+  \def\meinschreibentext{\footnotesize\textsc{My Mail}}
   \def\unserzeichentext{\footnotesize\textsc{Our Ref.}}
+  \def\unserschreibentext{\footnotesize\textsc{Our Mail}}
   \def\datumtext{\footnotesize\textsc{Date}}
   \def\datum{\today}}
 
@@ -128,6 +134,7 @@
 \def\IhrZeichen#1{\def\ihrzeichen{#1}} \def\ihrzeichen{}
 \def\IhrSchreiben#1{\def\ihrschreiben{#1}} \def\ihrschreiben{}
 \def\MeinZeichen#1{\def\meinzeichen{#1}} \def\meinzeichen{}
+\def\MeinSchreiben#1{\def\meinschreiben{#1}} \def\meinschreiben{}
 \def\Datum#1{\def\datum{#1}} 
 \def\Betreff#1{\def\betreff{#1}} \def\betreff{}
 
@@ -169,24 +176,15 @@
   \interlinepenalty=200
   \clearpage
 
-  \ifx \ihrzeichen\empty \ifx \ihrschreiben\empty \ifx
-  \meinzeichen\empty \makebox[45.5mm][l]{} \makebox[55.0mm][l]{}
-  \makebox[20.0mm][l]{} \else \makebox[45.5mm][l]{\ihrzeichentext}
-  \makebox[55.0mm][l]{\ihrschreibentext} \ifunserzeichen
-  \makebox[20.0mm][l]{\unserzeichentext} \else
-  \makebox[20.0mm][l]{\meinzeichentext} \fi \fi \else
-  \makebox[45.5mm][l]{\ihrzeichentext}
-  \makebox[55.0mm][l]{\ihrschreibentext} \ifunserzeichen
-  \makebox[20.0mm][l]{\unserzeichentext} \else
-  \makebox[20.0mm][l]{\meinzeichentext} \fi \fi \else
-  \makebox[45.5mm][l]{\ihrzeichentext}
-  \makebox[55.0mm][l]{\ihrschreibentext} \ifunserzeichen
-  \makebox[20.0mm][l]{\unserzeichentext} \else
-  \makebox[20.0mm][l]{\meinzeichentext} \fi \fi
+  \makebox[25mm][l]{\ihrzeichentext}
+  \makebox[45mm][l]{\ihrschreibentext}
+  \makebox[25.0mm][l]{\meinzeichentext}
+  \makebox[35.0mm][l]{\meinschreibentext}
   \makebox[37.0mm][r]{\datumtext} \\
-  \makebox[45.5mm][l]{\ihrzeichen}
-  \makebox[55.0mm][l]{\ihrschreiben}
-  \makebox[20.0mm][l]{\meinzeichen}
+  \makebox[25mm][l]{\ihrzeichen}
+  \makebox[45mm][l]{\ihrschreiben}
+  \makebox[25mm][l]{\meinzeichen}
+  \makebox[35mm][l]{\meinschreiben}
   \makebox[37.0mm][r]{\datum} \par
 
   \vspace{8mm}
