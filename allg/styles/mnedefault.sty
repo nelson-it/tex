@@ -37,9 +37,8 @@ linkcolor=black
 % Standardschrift ändern
 %\renewcommand{\rmdefault}{cmss}
 %
-%\def\reptitle{Report}%
-\expandafter\if\expandafter\csname ganzsicherleer\endcsname\csname reptitle\endcsname\gdef\reptitle{Report}\fi%
-\def\mnedefaulttitle{\reptitle}%
+\def\repleer{}
+\def\mnedefaulttitle{\ifx\ganzsicherleer\reptitle Report\else \ifx\reptitle\repleer Report\else\reptitle\fi\fi}%
 %
 \def\ps@firstmnedefault{\let\@mkboth=\markboth%
     \def\@evenhead{{\if\checkvariable{watermark}1\watermarkred{\watermark}\fi}%
